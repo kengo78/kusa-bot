@@ -26,7 +26,7 @@ current_value = current_value.replace('1 ' + crypto + ' = ', '')
 current_value = current_value.replace(' ' + currency, '')
 
 # 取得結果
-add_txt = '\n' + str(d_today) + ' 1' + crypto + '(' + currency + '): ' + str(current_value)
+add_txt = '<br>' + str(d_today) + ' 1' + crypto + '(' + currency + '): ' + str(current_value)
 
 file_path = "README.md"
  
