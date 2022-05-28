@@ -1,5 +1,9 @@
+import datetime
 from bs4 import BeautifulSoup
 import urllib.request as req
+
+d_today = datetime.date.today()
+
 
 # 通貨設定
 crypto = 'BTC'
@@ -22,4 +26,14 @@ current_value = current_value.replace('1 ' + crypto + ' = ', '')
 current_value = current_value.replace(' ' + currency, '')
 
 # 取得結果
-print('1' + crypto + '(' + currency + '): ' + str(current_value))
+add_txt = '\n' + str(d_today) + ' 1' + crypto + '(' + currency + '): ' + str(current_value)
+
+file_path = "README.md"
+ 
+with open(file_path, "r") as file:
+    txt = file.read()
+    txt = txt + add_txt
+    print(txt)
+
+with open(file_path, 'w') as file:
+    file.write(txt)
